@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  </head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">Night <span>Screams</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+           <li><a href="reviews.html">Reviews</a></li> 
+           <li><a class="active" href="submit.html">Submit Review</a></li>
+          <li><a  href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Contact Night Screams</h1>
+      <p class="lead">
+        Share your scariest experience or suggest horror movies that you think belong on this website.
+      </p>
+    </section>
+
+    <section id="contact-section">
+      <h3>Contact Horror Reviews</h3>
+
+      <div class="form-container">
+        <form action="https://formspree.io/f/xvgewpnl" method="POST">
+          <label for="fname">Your Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Enter your name" required />
+
+          <label for="movie">Favorite Horror Movie</label>
+          <input type="text" id="movie" name="movie" placeholder="e.g., Halloween (2018)" />
+
+          <label for="rating">How scary was it?</label>
+          <select id="rating" name="rating">
+            <option value="1">1 - Not scary</option>
+            <option value="2">2 - A bit creepy</option>
+            <option value="3">3 - Very scary</option>
+            <option value="4">4 - Nightmare fuel!</option>
+          </select>
+
+          <label for="message">Your Review</label>
+          <textarea id="message" name="message" placeholder="Write your thoughts..." style="height:150px"></textarea>
+
+          <input type="submit" value="Send Review" />
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>© Stanley Juarez • Bronx Community College</small>
+  </footer>
+
+</body>
+</html>
