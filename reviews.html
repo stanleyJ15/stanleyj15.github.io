@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="All Horror Movie Reviews - Night Screams" />
   <title>Reviews | Night Screams</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <header>
     <div class="nav">
       <div class="brand">Night <span>Screams</span></div>
@@ -22,37 +24,111 @@
     </div>
   </header>
 
-  <section class="introduction">
-    <h1>All Horror Reviews</h1>
-    <p class="introduction-paragraph">Browse user-submitted reviews. Submit your own to join the screams!</p>
-  </section>
+  <main>
+    <!-- Reviews Header -->
+    <section class="introduction">
+      <h1>All Horror Reviews</h1>
+      <p class="introduction-paragraph">
+        Browse user-submitted reviews. Submit your own to join the screams!
+      </p>
+    </section>
 
-   <!--<section class="grid">
-    <?php
-    include 'db_connect.php';
+    <!-- Latest Reviews Grid -->
+    <section style="padding: 2rem 1rem; max-width: 1100px; margin: auto;">
+      <div class="grid">
 
-    $sql = "SELECT movie_title, rating, review_text, submitted_at FROM reviews ORDER BY submitted_at DESC";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->fetchAll();
+        <article class="card">
+          <img src="Images copy/theconjuring.jpg" alt="The Conjuring (2013) poster">
+          <div class="pad">
+            <h3>The Conjuring (2013)</h3>
+            <p><span class="badge">2013</span> <span class="rating">7.5/10</span></p>
+            <p>A paranormal investigation team is hired to help a family terrorized by a dark presence in their farmhouse.</p>
+          </div>
+        </article>
 
-    if (count($result) > 0) {
-        foreach ($result as $row) {
-            echo "<div class='card'>";
-            echo "<h3>" . htmlspecialchars($row["movie_title"]) . "</h3>";
-            echo "<p class='rating'>Rating: " . str_repeat("★", $row["rating"]) . str_repeat("☆", 10 - $row["rating"]) . " (" . $row["rating"] . "/10)</p>";
-            echo "<p>" . htmlspecialchars($row["review_text"]) . "</p>";
-            echo "<small>Submitted: " . $row["submitted_at"] . "</small>";
-            echo "</div>";
-        }
-    } else {
-        echo "<p>No reviews yet. Be the first!</p>";
-    }
-    ?>
-  </section> -->
+        <article class="card">
+          <img src="Images copy/scarymovie.jpg" alt="Scary Movie (2000) poster">
+          <div class="pad">
+            <h3>Scary Movie (2000)</h3>
+            <p><span class="badge">2000</span> <span class="rating">6.3/10</span></p>
+            <p>A year after disposing of the body of a man they accidentally killed, a bumbling serial killer stalks a group of teenagers.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Images copy/it.jpg" alt="It (2017) poster">
+          <div class="pad">
+            <h3>It (2017)</h3>
+            <p><span class="badge">2017</span> <span class="rating">7.3/10</span></p>
+            <p>A group of seven children in Derry, Maine, are terrorized by an evil shape-shifting entity they call "It," which often appears as the clown Pennywise.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Images copy/Terrifier3.jpg" alt="Terrifier 3 (2023) poster">
+          <div class="pad">
+            <h3>Terrifier 3 (2023)</h3>
+            <p><span class="badge">2023</span> <span class="rating">7.1/10</span></p>
+            <p>Art the Clown is about to unleash chaos among the unsuspecting residents of Miles County as they sleep peacefully on Christmas Eve.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Images copy/talktome.jpg" alt="Talk to Me (2022) poster">
+          <div class="pad">
+            <h3>Talk to Me (2022)</h3>
+            <p><span class="badge">2022</span> <span class="rating">7.1/10</span></p>
+            <p>A young woman discovers a dark secret when she gains the ability to communicate with the dead.</p>
+          </div>
+        </article>
+
+        
+        <article class="card">
+          <img src="Images copy/halloween2018.jpg" alt="Halloween (2018) poster">
+          <div class="pad">
+            <h3>Halloween (2018)</h3>
+            <p><span class="badge">2018</span> <span class="rating">6.6/10</span></p>
+            <p>A young woman is stalked by a masked figure on Halloween night.</p>
+          </div>
+        </article>
+
+
+        <article class="card">
+          <img src="Images copy/finaldestination2025.jpg" alt="Final Destination: Bloodline (2025) poster">
+          <div class="pad">
+            <h3>Final Destination: Bloodline (2025)</h3>
+            <p><span class="badge">2025</span> <span class="rating">8/10</span></p>
+            <p>College student Stefanie heads home to track down the one person who might be able to break the cycle and save her family from the grisly demise that inevitably awaits them all.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Images copy/Weapons.jpg" alt="Weapons (2025) poster">
+          <div class="pad">
+            <h3>Weapons (2025)</h3>
+            <p><span class="badge">2025</span> <span class="rating">7.5/10</span></p>
+            <p>A group of teenagers discover a hidden weapon that grants them supernatural abilities, but at a great cost.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Images copy/blackphone1.jpeg" alt="Black Phone (2022) poster">
+          <div class="pad">
+            <h3>Black Phone (2022)</h3>
+            <p><span class="badge">2022</span> <span class="rating">7.1/10</span></p>
+            <p>A young girl is kidnapped and held captive in a remote cabin, where she must use her wits to survive and escape.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
 
   <footer>
     <small>© 2026 Stanley Juarez • Bronx Community College</small>
   </footer>
+
+
+  <script src="script.js"></script>
 </body>
 </html>
