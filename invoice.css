@@ -1,0 +1,494 @@
+/* ============================================
+   invoice.css — Night Screams Invoice Styles
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@300;400;600&display=swap');
+
+/* ── PAGE WRAPPER ── */
+.invoice-wrapper {
+  max-width: 860px;
+  margin: 3rem auto;
+  padding: 0 1rem 4rem;
+}
+
+/* ── TOP HEADER ── */
+.inv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.inv-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.2rem;
+  letter-spacing: 3px;
+  line-height: 1;
+  color: var(--text);
+}
+
+.inv-brand span {
+  color: var(--accent);
+}
+
+.inv-tagline {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.inv-company-info {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.inv-company-info strong {
+  color: var(--text);
+  display: block;
+  font-size: 0.95rem;
+}
+
+/* ── INVOICE META ROW ── */
+.inv-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: var(--card);
+  border: 1px solid #20283a;
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.inv-meta-group label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.inv-meta-group input,
+.inv-meta-group select {
+  background: var(--soft);
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  width: 180px;
+  transition: border-color 0.2s;
+}
+
+.inv-meta-group input:focus,
+.inv-meta-group select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ── BILL TO / FOR ── */
+.inv-parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.inv-party {
+  background: var(--card);
+  border: 1px solid #20283a;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.inv-party h3 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #20283a;
+  padding-bottom: 0.5rem;
+}
+
+.inv-party input,
+.inv-party textarea {
+  background: var(--soft);
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  padding: 8px 12px;
+  width: 100%;
+  margin-bottom: 8px;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.inv-party input:focus,
+.inv-party textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.inv-party input::placeholder,
+.inv-party textarea::placeholder {
+  color: #4a5568;
+}
+
+/* ── ITEMS TABLE ── */
+.inv-table-section {
+  margin-bottom: 2rem;
+}
+
+.inv-table-section h3 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid #20283a;
+}
+
+thead th {
+  background: var(--soft);
+  padding: 14px 16px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid #1a2029;
+  transition: background 0.15s;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: rgba(255, 54, 95, 0.04);
+}
+
+tbody td {
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+tbody td input {
+  background: var(--soft);
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  padding: 7px 10px;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+tbody td input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+tbody td input[type="number"] {
+  text-align: center;
+}
+
+.line-total {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text);
+  font-weight: 600;
+  text-align: right;
+  font-size: 0.9rem;
+  min-width: 90px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #4a5568;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.remove-btn:hover {
+  color: var(--accent);
+  background: rgba(255, 54, 95, 0.1);
+}
+
+.add-row-btn {
+  background: var(--soft);
+  border: 1px dashed #2d3748;
+  border-radius: 10px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.add-row-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 54, 95, 0.05);
+}
+
+/* ── TOTALS ── */
+.inv-totals {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.totals-box {
+  background: var(--card);
+  border: 1px solid #20283a;
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  min-width: 300px;
+}
+
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #1a2029;
+  gap: 2rem;
+}
+
+.totals-row:last-child {
+  border-bottom: none;
+}
+
+.totals-row span:first-child {
+  color: var(--muted);
+}
+
+.totals-row span:last-child {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.totals-row.grand {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 2px solid var(--accent);
+  border-bottom: none;
+}
+
+.totals-row.grand span:first-child {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.totals-row.grand span:last-child {
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+.totals-row input {
+  background: var(--soft);
+  border: 1px solid #2d3748;
+  border-radius: 6px;
+  color: var(--text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  width: 70px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.totals-row input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ── NOTES / FOOTER ── */
+.inv-notes {
+  background: var(--card);
+  border: 1px solid #20283a;
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.inv-notes h3 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.inv-notes textarea {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  resize: none;
+  width: 100%;
+}
+
+.inv-notes textarea:focus {
+  outline: none;
+  color: var(--text);
+}
+
+/* ── BUTTONS ── */
+.inv-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.btn-print {
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn-print:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn-reset {
+  background: var(--soft);
+  border: 1px solid #2d3748;
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  padding: 12px 28px;
+  transition: all 0.2s;
+}
+
+.btn-reset:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.status-select {
+  background: var(--soft);
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+.status-select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .inv-header {
+    flex-direction: column;
+  }
+
+  .inv-company-info {
+    text-align: left;
+  }
+
+  .inv-parties {
+    grid-template-columns: 1fr;
+  }
+
+  .inv-meta {
+    flex-direction: column;
+  }
+
+  .inv-meta-group input,
+  .inv-meta-group select {
+    width: 100%;
+  }
+
+  .totals-box {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .inv-totals {
+    justify-content: stretch;
+  }
+}
+
+/* ── PRINT ── */
+@media print {
+  header,
+  footer,
+  .inv-actions,
+  .add-row-btn,
+  .remove-btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .inv-brand {
+    color: #000;
+  }
+
+  .invoice-wrapper {
+    margin: 0;
+  }
+}

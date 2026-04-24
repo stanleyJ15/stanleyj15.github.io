@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Night Screams — Advertising Invoice" />
+  <title>Invoice | Night Screams</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="invoice.css" />
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="brand">Night <span>Screams</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="submit.html">Submit Review</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="invoice-wrapper">
+
+    <!-- HEADER -->
+    <div class="inv-header">
+      <div>
+        <div class="inv-brand">Night <span>Screams</span></div>
+        <div class="inv-tagline">Horror Movie Reviews &amp; Advertising</div>
+      </div>
+      <div class="inv-company-info">
+        <strong>Stanley Juarez</strong>
+        nightscreams.com<br>
+        stanley.juarez@stu.bcc.cuny.edu<br>
+        Bronx, New York<br>
+        Bronx Community College
+      </div>
+    </div>
+
+    <!-- INVOICE META -->
+    <div class="inv-meta">
+      <div class="inv-meta-group">
+        <label for="inv-number">Invoice #</label>
+        <input type="text" id="inv-number" placeholder="NS-0001" value="NS-0001" />
+      </div>
+      <div class="inv-meta-group">
+        <label for="inv-date">Invoice Date</label>
+        <input type="date" id="inv-date" />
+      </div>
+      <div class="inv-meta-group">
+        <label for="inv-due">Due Date</label>
+        <input type="date" id="inv-due" />
+      </div>
+      <div class="inv-meta-group">
+        <label for="inv-status">Status</label>
+        <select id="inv-status" class="status-select">
+          <option value="pending">⏳ Pending</option>
+          <option value="paid">✅ Paid</option>
+          <option value="overdue">🔴 Overdue</option>
+          <option value="draft">📝 Draft</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- BILL TO / FOR -->
+    <div class="inv-parties">
+      <div class="inv-party">
+        <h3>Bill To</h3>
+        <input type="text" id="client-name" placeholder="Client / Company Name" />
+        <input type="text" id="client-email" placeholder="Email Address" />
+        <input type="text" id="client-phone" placeholder="Phone Number" />
+        <textarea rows="3" id="client-address" placeholder="Mailing Address"></textarea>
+      </div>
+      <div class="inv-party">
+        <h3>For</h3>
+        <input type="text" id="campaign" placeholder="Campaign / Project Name" />
+        <input type="text" id="campaign-period" placeholder="Ad Period (e.g. May 2026)" />
+        <textarea rows="4" id="campaign-notes" placeholder="Additional campaign details or notes about the ad placement..."></textarea>
+      </div>
+    </div>
+
+    <!-- LINE ITEMS TABLE -->
+    <div class="inv-table-section">
+      <h3>Ad Packages &amp; Services</h3>
+      <table id="inv-table">
+        <thead>
+          <tr>
+            <th style="width:38%">Description</th>
+            <th style="width:22%">Ad Placement</th>
+            <th style="width:8%; text-align:center;">Qty</th>
+            <th style="width:14%; text-align:center;">Unit Price</th>
+            <th style="width:12%; text-align:right;">Total</th>
+            <th style="width:6%;"></th>
+          </tr>
+        </thead>
+        <tbody id="items-body">
+          <!-- rows injected by invoice.js -->
+        </tbody>
+      </table>
+      <button class="add-row-btn" onclick="addRow()">+ Add Line Item</button>
+    </div>
+
+    <!-- TOTALS -->
+    <div class="inv-totals">
+      <div class="totals-box">
+        <div class="totals-row">
+          <span>Subtotal</span>
+          <span id="subtotal">$0.00</span>
+        </div>
+        <div class="totals-row">
+          <span>Discount (%)</span>
+          <input type="number" id="discount" min="0" max="100" value="0" oninput="calculate()" />
+        </div>
+        <div class="totals-row">
+          <span>Tax (%)</span>
+          <input type="number" id="tax" min="0" max="100" value="8.875" oninput="calculate()" />
+        </div>
+        <div class="totals-row">
+          <span>Tax Amount</span>
+          <span id="tax-amount">$0.00</span>
+        </div>
+        <div class="totals-row grand">
+          <span>Total Due</span>
+          <span id="grand-total">$0.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTES -->
+    <div class="inv-notes">
+      <h3>Notes &amp; Payment Info</h3>
+      <textarea rows="4" id="footer-notes">Thank you for advertising with Night Screams! Payment is due within 30 days of invoice date. Please make payment via PayPal, Venmo, or bank transfer. For questions, contact stanley.juarez@stu.bcc.cuny.edu — we appreciate your support of independent horror media!</textarea>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="inv-actions">
+      <button class="btn-reset" onclick="resetForm()">Reset</button>
+      <button class="btn-print" onclick="window.print()">🖨 Print / Save PDF</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <small>© 2026 Stanley Juarez • Bronx Community College</small>
+  </footer>
+
+  <script src="invoice.js"></script>
+
+</body>
+</html>
