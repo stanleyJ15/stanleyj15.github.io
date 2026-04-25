@@ -51,3 +51,34 @@ function resetForm() {
 }
 
 calculate();
+
+
+
+
+// Add and delete rows for personalized ads
+function addRow(item = {}) {
+  const tbody = document.getElementById('items-body');
+  const tr = document.createElement('tr');
+
+  tr.innerHTML = `
+    <td>
+      <input type="text" placeholder="Ad package or service description"
+        value="${item.desc || ''}" oninput="calculate()" /> </td>
+    <td>
+        <input type="text" placeholder="e.g. Homepage"
+        value="${item.placement || ''}" /> </td>
+    <td> <input type="number" min="0" value="${item.qty ?? 1}" oninput="calculate()" /> </td>
+    <td> <input type="number" min="0" step="0.01" value="${item.price ?? ''}"
+     placeholder="0.00" oninput="calculate()" /> </td>
+    <td class="line-total">$0.00</td> 
+    <td> <button class="remove-btn" onclick="removeRow(this)" title="Remove row">✕</button> </td>
+  `;
+
+  tbody.appendChild(tr);
+  calculate();
+}
+
+function removeRow(btn) {
+  btn.closest('tr').remove();
+  calculate();
+}

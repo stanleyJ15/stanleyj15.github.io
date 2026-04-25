@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@300;400;600&display=swap');
-
+/* variables para usar desoues */
+:root {
+  --bg: #07090d;
+  --card: #11151c;
+  --soft: #1a2029;
+  --text: #e8ecf1;
+  --muted: #a9b3bf;
+  --accent: #ff365f;
+  --accent-2: #8b5cf6;
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
 .invoice-wrapper {
   max-width: 860px;
   margin: 3rem auto;
@@ -37,18 +48,18 @@
   margin-top: 4px;
 }
 
-.inv-company-info {
+/*.inv-company-info {
   text-align: right;
   font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.9;
-}
+} 
 
 .inv-company-info strong {
   color: var(--text);
   display: block;
   font-size: 0.95rem;
-}
+} */
 
 .inv-meta {
   display: flex;
@@ -180,7 +191,7 @@ tbody tr {
 
 tbody tr:last-child {
   border-bottom: none;
-}
+} 
 
 tbody tr:hover {
   background: rgba(255, 54, 95, 0.04);
@@ -386,4 +397,24 @@ tbody td input[type="number"] {
   body { background: #fff; color: #000; }
   .inv-brand { color: #000; }
   .invoice-wrapper { margin: 0; }
+}
+
+.add-row-btn {
+  background: var(--soft);
+  border: 1px dashed #2d3748;
+  border-radius: 10px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.add-row-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 54, 95, 0.05);
 }
