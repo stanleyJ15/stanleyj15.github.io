@@ -27,7 +27,6 @@
 
   <main class="invoice-wrapper">
 
-    <!-- HEADER -->
     <div class="inv-header">
       <div>
         <div class="inv-brand">Night <span>Screams</span></div>
@@ -35,18 +34,17 @@
       </div>
       <div class="inv-company-info">
         <strong>Stanley Juarez</strong>
-        nightscreams.com<br>
         stanley.juarez@stu.bcc.cuny.edu<br>
         Bronx, New York<br>
         Bronx Community College
       </div>
     </div>
 
-    <!-- INVOICE META -->
-    <div class="inv-meta">
+
+     <div class="inv-meta">
       <div class="inv-meta-group">
         <label for="inv-number">Invoice #</label>
-        <input type="text" id="inv-number" placeholder="NS-0001" value="NS-0001" />
+        <input type="text" id="inv-number"  />
       </div>
       <div class="inv-meta-group">
         <label for="inv-date">Invoice Date</label>
@@ -56,22 +54,12 @@
         <label for="inv-due">Due Date</label>
         <input type="date" id="inv-due" />
       </div>
-      <div class="inv-meta-group">
-        <label for="inv-status">Status</label>
-        <select id="inv-status" class="status-select">
-          <option value="pending">⏳ Pending</option>
-          <option value="paid">✅ Paid</option>
-          <option value="overdue">🔴 Overdue</option>
-          <option value="draft">📝 Draft</option>
-        </select>
-      </div>
     </div>
 
-    <!-- BILL TO / FOR -->
     <div class="inv-parties">
       <div class="inv-party">
         <h3>Bill To</h3>
-        <input type="text" id="client-name" placeholder="Client / Company Name" />
+        <input type="text" id="client-name" placeholder="Company Name" />
         <input type="text" id="client-email" placeholder="Email Address" />
         <input type="text" id="client-phone" placeholder="Phone Number" />
         <textarea rows="3" id="client-address" placeholder="Mailing Address"></textarea>
@@ -80,32 +68,56 @@
         <h3>For</h3>
         <input type="text" id="campaign" placeholder="Campaign / Project Name" />
         <input type="text" id="campaign-period" placeholder="Ad Period (e.g. May 2026)" />
-        <textarea rows="4" id="campaign-notes" placeholder="Additional campaign details or notes about the ad placement..."></textarea>
+        <textarea rows="4" id="campaign-notes" placeholder="Additional campaign details..."></textarea>
       </div>
     </div>
 
-    <!-- LINE ITEMS TABLE -->
-    <div class="inv-table-section">
+  <div class="inv-table-section">
       <h3>Ad Packages &amp; Services</h3>
       <table id="inv-table">
         <thead>
           <tr>
-            <th style="width:38%">Description</th>
-            <th style="width:22%">Ad Placement</th>
+            <th style="width:40%">Description</th>
+            <th style="width:24%">Ad Placement</th>
             <th style="width:8%; text-align:center;">Qty</th>
             <th style="width:14%; text-align:center;">Unit Price</th>
-            <th style="width:12%; text-align:right;">Total</th>
-            <th style="width:6%;"></th>
+            <th style="width:14%; text-align:right;">Total</th>
           </tr>
         </thead>
+      
         <tbody id="items-body">
-          <!-- rows injected by invoice.js -->
+          <tr>
+            <td><input type="text" value="Homepage Banner Ad (Top Slot)" oninput="calculate()" /></td>
+            <td><input type="text" value="Homepage" /></td>
+            <td><input type="number" min="0" value="1" oninput="calculate()" /></td>
+            <td><input type="number" min="0" step="0.01" value="75.00" oninput="calculate()" /></td>
+            <td class="line-total">$75.00</td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Featured Review Spotlight" oninput="calculate()" /></td>
+            <td><input type="text" value="Reviews Page" /></td>
+            <td><input type="number" min="0" value="1" oninput="calculate()" /></td>
+            <td><input type="number" min="0" step="0.01" value="50.00" oninput="calculate()" /></td>
+            <td class="line-total">$50.00</td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Sidebar Ad (Monthly)" oninput="calculate()" /></td>
+            <td><input type="text" value="All Pages" /></td>
+            <td><input type="number" min="0" value="1" oninput="calculate()" /></td>
+            <td><input type="number" min="0" step="0.01" value="40.00" oninput="calculate()" /></td>
+            <td class="line-total">$40.00</td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Newsletter Shout-Out" oninput="calculate()" /></td>
+            <td><input type="text" value="Email Blast" /></td>
+            <td><input type="number" min="0" value="1" oninput="calculate()" /></td>
+            <td><input type="number" min="0" step="0.01" value="25.00" oninput="calculate()" /></td>
+            <td class="line-total">$25.00</td>
+          </tr>
         </tbody>
       </table>
-      <button class="add-row-btn" onclick="addRow()">+ Add Line Item</button>
     </div>
 
-    <!-- TOTALS -->
     <div class="inv-totals">
       <div class="totals-box">
         <div class="totals-row">
@@ -131,14 +143,12 @@
       </div>
     </div>
 
-    <!-- NOTES -->
     <div class="inv-notes">
       <h3>Notes &amp; Payment Info</h3>
-      <textarea rows="4" id="footer-notes">Thank you for advertising with Night Screams! Payment is due within 30 days of invoice date. Please make payment via PayPal, Venmo, or bank transfer. For questions, contact stanley.juarez@stu.bcc.cuny.edu — we appreciate your support of independent horror media!</textarea>
+      <textarea rows="4" id="footer-notes">Thank you for advertising with Night Screams! Payment is due within 30 days of invoice date. Please make payment via PayPal, Venmo, or bank transfer. For questions, contact stanley.juarez@stu.bcc.cuny.edu</textarea>
     </div>
 
-    <!-- ACTIONS -->
-    <div class="inv-actions">
+    <div class="print">
       <button class="btn-reset" onclick="resetForm()">Reset</button>
       <button class="btn-print" onclick="window.print()">🖨 Print / Save PDF</button>
     </div>

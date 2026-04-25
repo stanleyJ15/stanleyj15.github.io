@@ -1,17 +1,11 @@
-/* ============================================
-   invoice.css — Night Screams Invoice Styles
-   ============================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@300;400;600&display=swap');
 
-/* ── PAGE WRAPPER ── */
 .invoice-wrapper {
   max-width: 860px;
   margin: 3rem auto;
   padding: 0 1rem 4rem;
 }
 
-/* ── TOP HEADER ── */
 .inv-header {
   display: flex;
   justify-content: space-between;
@@ -56,7 +50,6 @@
   font-size: 0.95rem;
 }
 
-/* ── INVOICE META ROW ── */
 .inv-meta {
   display: flex;
   justify-content: space-between;
@@ -79,8 +72,7 @@
   margin-bottom: 6px;
 }
 
-.inv-meta-group input,
-.inv-meta-group select {
+.inv-meta-group input {
   background: var(--soft);
   border: 1px solid #2d3748;
   border-radius: 8px;
@@ -92,13 +84,11 @@
   transition: border-color 0.2s;
 }
 
-.inv-meta-group input:focus,
-.inv-meta-group select:focus {
+.inv-meta-group input:focus {
   outline: none;
   border-color: var(--accent);
 }
 
-/* ── BILL TO / FOR ── */
 .inv-parties {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -150,7 +140,6 @@
   color: #4a5568;
 }
 
-/* ── ITEMS TABLE ── */
 .inv-table-section {
   margin-bottom: 2rem;
 }
@@ -232,43 +221,6 @@ tbody td input[type="number"] {
   min-width: 90px;
 }
 
-.remove-btn {
-  background: none;
-  border: none;
-  color: #4a5568;
-  cursor: pointer;
-  font-size: 1.1rem;
-  padding: 4px 8px;
-  border-radius: 6px;
-  transition: color 0.2s, background 0.2s;
-}
-
-.remove-btn:hover {
-  color: var(--accent);
-  background: rgba(255, 54, 95, 0.1);
-}
-
-.add-row-btn {
-  background: var(--soft);
-  border: 1px dashed #2d3748;
-  border-radius: 10px;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 0.85rem;
-  margin-top: 0.75rem;
-  padding: 10px;
-  width: 100%;
-  transition: all 0.2s;
-  font-family: 'Inter', sans-serif;
-}
-
-.add-row-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(255, 54, 95, 0.05);
-}
-
-/* ── TOTALS ── */
 .inv-totals {
   display: flex;
   justify-content: flex-end;
@@ -345,7 +297,6 @@ tbody td input[type="number"] {
   border-color: var(--accent);
 }
 
-/* ── NOTES / FOOTER ── */
 .inv-notes {
   background: var(--card);
   border: 1px solid #20283a;
@@ -379,8 +330,7 @@ tbody td input[type="number"] {
   color: var(--text);
 }
 
-/* ── BUTTONS ── */
-.inv-actions {
+.print {
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
@@ -421,74 +371,19 @@ tbody td input[type="number"] {
   color: var(--accent);
 }
 
-.status-select {
-  background: var(--soft);
-  border: 1px solid #2d3748;
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 0.85rem;
-  padding: 8px 12px;
-  font-family: 'Inter', sans-serif;
-}
-
-.status-select:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-
-/* ── RESPONSIVE ── */
 @media (max-width: 640px) {
-  .inv-header {
-    flex-direction: column;
-  }
-
-  .inv-company-info {
-    text-align: left;
-  }
-
-  .inv-parties {
-    grid-template-columns: 1fr;
-  }
-
-  .inv-meta {
-    flex-direction: column;
-  }
-
-  .inv-meta-group input,
-  .inv-meta-group select {
-    width: 100%;
-  }
-
-  .totals-box {
-    min-width: unset;
-    width: 100%;
-  }
-
-  .inv-totals {
-    justify-content: stretch;
-  }
+  .inv-header { flex-direction: column; }
+  .inv-company-info { text-align: left; }
+  .inv-parties { grid-template-columns: 1fr; }
+  .inv-meta { flex-direction: column; }
+  .inv-meta-group input { width: 100%; }
+  .totals-box { min-width: unset; width: 100%; }
+  .inv-totals { justify-content: stretch; }
 }
 
-/* ── PRINT ── */
 @media print {
-  header,
-  footer,
-  .inv-actions,
-  .add-row-btn,
-  .remove-btn {
-    display: none !important;
-  }
-
-  body {
-    background: #fff;
-    color: #000;
-  }
-
-  .inv-brand {
-    color: #000;
-  }
-
-  .invoice-wrapper {
-    margin: 0;
-  }
+  header, footer, .print { display: none !important; }
+  body { background: #fff; color: #000; }
+  .inv-brand { color: #000; }
+  .invoice-wrapper { margin: 0; }
 }
