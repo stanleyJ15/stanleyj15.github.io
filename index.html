@@ -19,7 +19,7 @@
           <li><a href="submit.html">Submit Review</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="invoice.html">Invoice</a></li>
-          <li><a href="calc.html">MPG Calculator</a></li>
+          
         </ul>
       </nav>
     </div>
@@ -85,7 +85,40 @@
     </div>
   </section>
 
- 
+ <!-- Trivia lines -->
+<section style="max-width: 850px; margin: 3rem auto; padding: 0 1rem;">
+  <div class="card" style="border: 1px solid var(--accent); position: relative; overflow: hidden;">
+    
+    <div style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); 
+    font-size: 10rem; opacity: 0.04; pointer-events: none; user-select: none;">💀</div>
+
+    <div class="pad" style="padding: 2.5rem;">
+
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #1f2530;">
+        <span style="font-size: 1.8rem;">👻</span>
+        <div>
+          <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: var(--muted); margin-bottom: 0.1rem;">Did You Know?</p>
+          <p style="font-size: 1.2rem; font-weight: 700; color: var(--accent); letter-spacing: 1px; text-transform: uppercase;">Horror Trivia</p>
+        </div>
+      </div>
+
+      <p id="trivia-text" style="font-size: 1.2rem; font-style: italic; line-height: 1.9; color: var(--text); min-height: 80px; margin-bottom: 2rem;"></p>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <p style="font-size: 0.78rem; color: var(--muted);">🎬 New fact every time you click</p>
+        <button onclick="newTrivia()" style="background: var(--accent); color: #fff; border: none; padding: 10px 28px; border-radius: 999px; cursor: pointer; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; transition: opacity 0.2s;"
+          onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          🎲 New Fact
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+    </div>
+  </div>
+</section>
+
   <footer>
     <small>© 2026 Stanley Juarez • Bronx Community College</small>
   </footer>

@@ -5,21 +5,20 @@ due.setDate(due.getDate() + 30);
 document.getElementById('inv-due').value = due.toISOString().split('T')[0];
 
 function calculate() {
-  const rows = document.querySelectorAll('#items-body tr');
-  let subtotal = 0;
+  const rows = document.querySelectorAll('#items-body tr'); let subtotal = 0;
   rows.forEach(function(row) {
     const inputs = row.querySelectorAll('input[type="number"]');
-    const qty   = parseFloat(inputs[0].value) || 0;
-    const price = parseFloat(inputs[1].value) || 0;
-    const total = qty * price;
+    const qty = parseFloat(inputs[0].value) || 0;
+   const price = parseFloat(inputs[1].value) || 0;
+   const total = qty * price;
     row.querySelector('.line-total').textContent = '$' + total.toFixed(2);
     subtotal += total;
   });
   const discountPct = parseFloat(document.getElementById('discount').value) || 0;
-  const taxPct      = parseFloat(document.getElementById('tax').value) || 0;
-  const discounted  = subtotal * (1 - discountPct / 100);
-  const taxAmount   = discounted * (taxPct / 100);
-  const grand       = discounted + taxAmount;
+  const taxPct = parseFloat(document.getElementById('tax').value) || 0;
+  const discounted = subtotal * (1 - discountPct / 100);
+  const taxAmount = discounted * (taxPct / 100);
+  const grand = discounted + taxAmount;
   document.getElementById('subtotal').textContent    = '$' + subtotal.toFixed(2);
   document.getElementById('tax-amount').textContent  = '$' + taxAmount.toFixed(2);
   document.getElementById('grand-total').textContent = '$' + grand.toFixed(2);
@@ -27,18 +26,18 @@ function calculate() {
 
 function resetForm() {
   if (!confirm('Reset all fields? This will clear everything.')) return;
-  document.getElementById('client-name').value     = '';
-  document.getElementById('client-email').value    = '';
-  document.getElementById('client-phone').value    = '';
-  document.getElementById('client-address').value  = '';
-  document.getElementById('campaign').value        = '';
+  document.getElementById('client-name').value = '';
+   document.getElementById('client-email').value = '';
+  document.getElementById('client-phone').value = '';
+  document.getElementById('client-address').value = '';
+  document.getElementById('campaign').value = '';
   document.getElementById('campaign-period').value = '';
   document.getElementById('campaign-notes').value  = '';
-  document.getElementById('discount').value        = '0';
-  document.getElementById('tax').value             = '8.875';
+  document.getElementById('discount').value = '0';
+  document.getElementById('tax').value = '8.875';
   const defaults = [
-    { qty: 1, price: 75.00 },
-    { qty: 1, price: 50.00 },
+{ qty: 1, price: 75.00 },
+   { qty: 1, price: 50.00 },
     { qty: 1, price: 40.00 },
     { qty: 1, price: 25.00 },
   ];
@@ -46,16 +45,13 @@ function resetForm() {
     const inputs = row.querySelectorAll('input[type="number"]');
     inputs[0].value = defaults[i].qty;
     inputs[1].value = defaults[i].price;
-  });
+       });
   calculate();
 }
 
 calculate();
 
 
-
-
-// Add and delete rows for personalized ads
 function addRow(item = {}) {
   const tbody = document.getElementById('items-body');
   const tr = document.createElement('tr');
@@ -82,3 +78,6 @@ function removeRow(btn) {
   btn.closest('tr').remove();
   calculate();
 }
+
+
+
