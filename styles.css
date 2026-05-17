@@ -327,3 +327,38 @@ footer {
 .section-heading.vintage h2 {
   color: #c9a84c;
 }
+
+
+/* A dropdown menu for my other projects */
+nav li {
+  position: relative;
+}
+
+nav li .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0,0,0,0.95);
+  border: 1px solid var(--soft);
+  border-radius: 8px;
+  min-width: 180px;
+  z-index: 999;
+  padding: 0.4rem 0;
+}
+
+nav li:hover .dropdown {
+  display: block;
+}
+
+nav li .dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+nav li .dropdown a:hover {
+  background: var(--soft);
+  color: var(--accent);
+}

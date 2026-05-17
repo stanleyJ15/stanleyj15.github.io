@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Trivias
+// HORROR TRIVIA and assignment 
 const trivia = [
   "The shower scene in Psycho (1960) took 7 days to film using 70 camera setups — yet Hitchcock never showed the knife touching skin.",
   "The word 'zombie' comes from Haitian folklore and wasn't used in horror films until the 1930s.",
@@ -91,15 +91,32 @@ const trivia = [
 ];
 
 function newTrivia() {
-  const el = document.getElementById('trivia-text');
-  if (!el) return;
-  const current = el.innerText;
+
+  // This was my old plain JS selector */
+  // var el = document.getElementById('trivia-text');   
+  // if (!el) return;                                    
+  // var current = el.innerText;                       
+
+  // New jQuery selector
+  var $el = $('#trivia-text');                          
+  if ($el.length === 0) return;                         
+  var current = $el.text();                            
+
   let next;
   do { next = trivia[Math.floor(Math.random() * trivia.length)]; }
   while (next === current && trivia.length > 1);
-  el.style.transition = 'opacity 0.3s';
-  el.style.opacity = 0;
-  setTimeout(() => { el.innerText = next; el.style.opacity = 1; }, 200);
+
+
+  // This was my old plain JS selector */
+  // el.style.transition = 'opacity 0.3s';             
+  // el.style.opacity = 0;                             
+  // setTimeout(() => { el.innerText = next; el.style.opacity = 1; }, 200); 
+
+
+
+  // New jQuery selector
+  $el.css('transition', 'opacity 0.3s').css('opacity', 0);    // jQuery CSS change
+  setTimeout(() => { $el.text(next).css('opacity', 1); }, 200); // jQuery text + CSS
 }
 
 document.addEventListener('DOMContentLoaded', function() {
