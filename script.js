@@ -115,8 +115,8 @@ function newTrivia() {
 
 
   // New jQuery selector
-  $el.css('transition', 'opacity 0.3s').css('opacity', 0);    // jQuery CSS change
-  setTimeout(() => { $el.text(next).css('opacity', 1); }, 200); // jQuery text + CSS
+  $el.css('transition', 'opacity 0.3s').css('opacity', 0);   
+  setTimeout(() => { $el.text(next).css('opacity', 1); }, 200); 
 }
 
 document.addEventListener('DOMContentLoaded', function() {
