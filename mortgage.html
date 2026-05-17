@@ -1,0 +1,73 @@
+<html>
+<head>
+
+<title>Untitled Document</title>
+<script language="JavaScript" src="calculator.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
+
+<body bgcolor="#CCFFFF">
+<div align="center"><font color="#666666" size="+5">Home Mortgage Calculator</font>
+</div>
+<table width="500" height="152" border="1" align="center" cellpadding="5" cellspacing="0" bgcolor="#CCFFCC">
+  <tr>
+	<td width="228" height="150" align="center" valign="middle">
+
+<div align="justify"><font color="#666666" face="Arial, Helvetica, sans-serif">
+To use the Home Mortgage Calculator enter the amount of the mortgage, the interest of 
+the loan, and the number of years. Then click on the &quot;Calculate&quot; button to 
+see an estimate of your monthly payment.
+</font></div>
+	
+	</td>
+
+	<td width="246" align="center" valign="middle">
+
+
+  <form name="Form1">
+  <table width="235" height="140">
+
+    <tr>
+      <td><font color="#666666" face="Arial, Helvetica, sans-serif">Mortgage:</font></td>
+      <td><input type="text" name="Amount" value=" " size="9"></td>
+    </tr>
+
+    <tr>
+      <td><font color="#666666" face="Arial, Helvetica, sans-serif">Interest (e.g., 7.9)</font></td>
+      <td><input type="text" name="Rate" value=" " size="9"></td>
+    </tr>
+
+    <tr>
+      <td><font color="#666666" face="Arial, Helvetica, sans-serif">Years:</font></td>
+      <td>
+        <select name="Years">
+          <option value="0">0</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td><input type="button" value="Calculate" onclick="mortCalc(Form1)"></td>
+      <td><input type="reset" value="Reset"></td>
+    </tr>
+
+    <tr>
+      <td><font color="#666666" face="Arial, Helvetica, sans-serif">Your monthly payment:</font></td>
+      <td><input type="text" name="Payment" size="9"></td>
+    </tr>
+
+  </table>
+  </form>
+
+
+
+	</td>
+</tr>
+</table>
+</body>
+</html>
+
+```

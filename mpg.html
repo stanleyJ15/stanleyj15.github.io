@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MPG Calculator - Stanley Juarez" />
+  <title>MPG Calculator</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      margin: 120px auto;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 95%;
+      padding: 10px;
+      margin-top: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+      <div class="brand">Stanley <span>Juarez</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="submit.html">Submit Review</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="invoice.html">Invoice</a></li>
+          <li>
+  <a href="#">Other Projects ▾</a>
+  <ul class="dropdown">
+    <li><a class="active" href="mpg.html">MPG Calculator</a></li>
+    <li><a href="mortgage.html">Mortgage Calculator</a></li>
+  </ul>
+</li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<div class="card">
+  <img src="logo.webp" alt="Calculator Logo">
+  <h1 style="color: #000000;">MPG Calculator</h1>
+
+  <input type="number" id="miles" placeholder="Miles Traveled">
+  <input type="number" id="gallons" placeholder="Gallons Used">
+
+  <button onclick="calculate()">Calculate MPG</button>
+
+  <div class="result" id="result" style="color: #000000;">Your MPG will appear here</div>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function calculate() {
+  var miles = parseFloat(document.getElementById("miles").value);
+  var gallons = parseFloat(document.getElementById("gallons").value);
+
+  if (isNaN(miles) || isNaN(gallons) || gallons === 0) {
+    document.getElementById("result").innerHTML =
+      "Please enter valid numbers";
+    return;
+  }
+
+  var mpg = miles / gallons;
+
+  document.getElementById("result").innerHTML =
+    "Your MPG is: " + mpg.toFixed(2);
+}
+</script>
+
+</body>
+</html>
